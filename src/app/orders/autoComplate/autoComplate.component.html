@@ -1,0 +1,17 @@
+<pre class="card card-block card-header">Model: {{ asyncSelected | json }}</pre>
+
+<input
+  [(ngModel)]="asyncSelected"
+  [typeaheadAsync]="true"
+  [typeahead]="dataSource$"
+  (typeaheadLoading)="changeTypeaheadLoading($event)"
+  (typeaheadOnSelect)="typeaheadOnSelect($event)"
+  [typeaheadOptionsLimit]="10"
+  [typeaheadOptionField]="field"
+  [typeaheadScrollable]="true"
+  [typeaheadOptionsInScrollableView]="5"
+  [placeholder]="placeholder"
+  typeaheadGroupField="region"
+  class="form-control"
+/>
+<div *ngIf="typeaheadLoading">Loading</div>

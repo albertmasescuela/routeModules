@@ -18,6 +18,7 @@ import { PostsService } from './services/posts.service';
     HttpClientModule,
     TypeaheadModule
   ],
-  providers: [PostsService]
+  providers: [PostsService],
+  exports: [OrderListComponent]
 })
 export class OrdersModule {}
